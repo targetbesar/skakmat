@@ -478,6 +478,72 @@ $('<div class="kotak3" style="margin-top: 12px;"><a href="promotion/v3"><img alt
 </script>
 
 <script>
+
+$(document).ready(function () {
+    const sectionHTML = `
+    <div style="margin: 12px 0; padding: 10px; border: 2px solid rgb(0, 234, 255); border-radius: 12px; background: linear-gradient(#000000 0, #151515 100%); display: flex; flex-direction: row; flex-wrap: nowrap; align-items: center; justify-content: space-between; gap: 15px;">
+        
+        <!-- Kolom Kiri -->
+        <div style="flex: 1; color: #fff; max-width: 50%;">
+            <p style="text-align: center; font-weight: bold; color: #fff; font-size: 12px; margin-bottom: 10px;">
+                Pastikan Selalu Login Dengan Link Resmi Kami
+            </p>
+            <!-- Tombol totocc.games -->
+            <a onclick="copyToClipboard('https://totocc.games/')" 
+                style="font-weight: 500; background: linear-gradient(rgb(0, 167, 209) 0, rgb(0, 173, 247) 100%); color: #000; border: 1px solid #00ddff; border-radius: 5px; padding: 8px 12px; font-size: 12px; cursor: pointer; width: auto;">
+                totocc.games
+            </a><br>
+
+            <!-- Dropdown Pilihan Link -->
+            <label for="linkDropdown" style="font-size: 12px; margin-bottom: 5px; display: block;">Pilih Link Alternatif:</label>
+            <select id="linkDropdown" style="font-size: 12px; padding: 5px; border-radius: 5px; width: 100%; margin-bottom: 5px;">
+                <option data-link="https://totocc.tech/">totocc.tech</option>
+            </select>
+
+            <!-- Tombol Salin -->
+            <button onclick="copySelectedLink()" 
+                style="font-size: 10px; background: rgb(0, 234, 255); border: 1px solid #00ddff; padding: 6px 10px; border-radius: 5px; cursor: pointer;">
+                Salin Link
+            </button>
+
+            <p style="color: white; font-size: 8px; margin-top: 10px;">
+                * Klik tombol untuk menyalin link yang dipilih
+            </p>
+        </div>
+
+        <!-- Kolom Kanan -->
+        <div style="max-width: 45%; flex-shrink: 0;">
+            <a href="https://olx.recamweek.com/OLXTOTO/olx.apk">
+                <img alt="TOTOCC" src="https://photoku.io/images/2025/06/01/apkolxtoto.png" 
+                     style="width: 100%; border: 1px solid gold; border-radius: 12px; box-shadow: 0 0 10px rgba(255,0,0,0.5);">
+            </a>
+        </div>
+    </div>
+`;
+
+    $(sectionHTML).insertBefore(".game-togel");
+
+    // Fungsi salin ke clipboard
+    window.copyToClipboard = function (text) {
+        navigator.clipboard.writeText(text).then(function () {
+            alert("Link berhasil disalin: " + text);
+        }, function () {
+            alert("Gagal menyalin link.");
+        });
+    };
+
+    // Fungsi salin dari dropdown
+    window.copySelectedLink = function () {
+        const dropdown = document.getElementById("linkDropdown");
+        const selectedOption = dropdown.options[dropdown.selectedIndex];
+        const fullLink = selectedOption.getAttribute("data-link");
+        copyToClipboard(fullLink);
+    };
+});
+
+</script>
+	
+<script>
 document.addEventListener("DOMContentLoaded",function(){
 $('<div class="promoslot"><a href="promotion/v3" rel="noopener noreferrer nofollow"><img alt="TOTOCC" src="https://hose-hose.me/promo/bn-promonew_03.jpg" width="100%" style="border: 3px groove #00f7ff;border-radius: 15px;"/></a><div class="warning-content-info nbqris" style="text-transform: uppercase;"><div class="notice-warning-info"><i class="fa fa-info-circle"></i><span class="span-text">Info Terbaru Kini Untuk Semua Provider Games Slot Minimal Bet (Stake) Menjadi <b style="color: #ffffff;">400 Perak.</b></span></div></div>').insertBefore(".slot-wrapper");}
 ,false);
